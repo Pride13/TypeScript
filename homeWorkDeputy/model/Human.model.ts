@@ -6,4 +6,5 @@ export class Human {
         this.weight = weight;
         this.height = height;
     }
+
 }

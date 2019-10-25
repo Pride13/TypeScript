@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var model_1 = require("./model");
+var Vasyl = new model_1.Deputy(78, 179, 'Stethem', 'Vasyl', 45, true, 55000);
+var Nata = new model_1.Deputy(55, 175, 'Bublei', 'Nata', 21, false, 0);
+Vasyl.giveBribe();
+// console.log(Vasyl);
+var factions = new model_1.Faction([]);
+factions.addDeputy(Vasyl);
+factions.addDeputy(Nata);
+console.log(factions);
+console.log(factions);
+// factions.deleteDeputy(Nata);
+// console.log(factions);

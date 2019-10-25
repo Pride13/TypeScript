@@ -29,4 +29,5 @@ export class Faction {
     //
     //         this.listOfDeputy.splice(indexToDelete, 1);
     //     }
+
 }
