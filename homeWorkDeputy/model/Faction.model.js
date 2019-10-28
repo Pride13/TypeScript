@@ -16,18 +16,16 @@ var Faction = /** @class */ (function () {
     Faction.prototype.addDeputy = function (obj) {
         this.listOfDeputies.push(obj);
     };
-    // deleteDeputy(deputyToDelete: Deputy) {
-    //     const indexToDelete = this.listOfDeputies.findIndex((dep: Deputy) => {
-    //         return deputyToDelete.surname === dep.surname && deputyToDelete.name === dep.name
-    //     });
-    //
-    //     this.listOfDeputies.splice(indexToDelete, 1);
-    // }
-    // deleteOneDeputy(deputySurname: string) {
-    //     const indexToDelete = this.listOfDeputies.findIndex((dep: Deputy)=> deputySurname === dep.surname);
-    //
-    //     this.listOfDeputies.splice(indexToDelete, 1)
-    // }
+    Faction.prototype.deleteDeputy = function (deputyToDelete) {
+        var indexToDelete = this.listOfDeputies.findIndex(function (dep) {
+            return deputyToDelete.surname === dep.surname && deputyToDelete.name === dep.name;
+        });
+        this.listOfDeputies.splice(indexToDelete, 1);
+    };
+    Faction.prototype.deleteOneDeputy = function (deputySurname) {
+        var indexToDelete = this.listOfDeputies.findIndex(function (dep) { return deputySurname === dep.surname; });
+        this.listOfDeputies.splice(indexToDelete, 1);
+    };
     Faction.prototype.deleteAllBriberDeputies = function () {
         var honestDeputy = this.listOfDeputies.filter(function (dep) { return !dep.bribery; });
         this.listOfDeputies.splice(0, this.listOfDeputies.length);
