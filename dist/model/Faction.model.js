@@ -8,18 +8,16 @@ class Faction {
     addDeputy(obj) {
         this.listOfDeputies.push(obj);
     }
-    // deleteDeputy(deputyToDelete: Deputy) {
-    //     const indexToDelete = this.listOfDeputies.findIndex((dep: Deputy) => {
-    //         return deputyToDelete.surname === dep.surname && deputyToDelete.name === dep.name
-    //     });
-    //
-    //     this.listOfDeputies.splice(indexToDelete, 1);
-    // }
-    // deleteOneDeputy(deputySurname: string) {
-    //     const indexToDelete = this.listOfDeputies.findIndex((dep: Deputy)=> deputySurname === dep.surname);
-    //
-    //     this.listOfDeputies.splice(indexToDelete, 1)
-    // }
+    deleteDeputy(deputyToDelete) {
+        const indexToDelete = this.listOfDeputies.findIndex((dep) => {
+            return deputyToDelete.surname === dep.surname && deputyToDelete.name === dep.name;
+        });
+        this.listOfDeputies.splice(indexToDelete, 1);
+    }
+    deleteOneDeputy(deputySurname) {
+        const indexToDelete = this.listOfDeputies.findIndex((dep) => deputySurname === dep.surname);
+        this.listOfDeputies.splice(indexToDelete, 1);
+    }
     deleteAllBriberDeputies() {
         const honestDeputy = this.listOfDeputies.filter((dep) => !dep.bribery);
         this.listOfDeputies.splice(0, this.listOfDeputies.length);
